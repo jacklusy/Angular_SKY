@@ -1,16 +1,24 @@
 <div class="container">
+  <!-- Data Binding: Interpolation -->
   <div class="d-flex justify-content-between p-5 flex-wrap gap-3">
-    <h3>Welcome Back Hazem! Here are your latest updates.</h3>
-    <button class="btn btn-success btn-req">New Request</button>
+    <h3>Welcome Back {{ userName }}! Here are your latest updates.</h3>
+    <button class="btn btn-success btn-req" (click)="toggleProfileView()">
+      Toggle Profile View
+    </button>
   </div>
-  <div class="d-flex justify-content-between pb-5 pt-5 flex-wrap gap-3">
+
+  <div
+    class="d-flex justify-content-between pb-5 pt-5 flex-wrap gap-3"
+    *ngIf="isProfileVisible"
+  >
+    <!-- One-Way Data Binding: Property Binding -->
     <div class="info user-profile">
       <div class="d-flex justify-content-between p-3">
         <div class="d-flex justify-content-between info-part1">
-          <img src="./assets/images/Default.jpg" alt="" />
+          <img [src]="'./assets/images/Default.jpg'" alt="" />
           <div class="info-part1-b ms-2">
-            <h6>Ahmad Azmi</h6>
-            <p>Junior Accounting Officer</p>
+            <h6>{{ profile.name }}</h6>
+            <p>{{ profile.position }}</p>
           </div>
         </div>
         <div class="info-part2">
@@ -22,39 +30,32 @@
           <i class="fa-solid fa-user"></i>
           <div class="info-part3-b ms-2">
             <h6>Reporting To:</h6>
-            <p>Salwa Assem</p>
+            <p>{{ profile.supervisor }}</p>
           </div>
         </div>
         <div class="d-flex justify-content-between info-part4">
           <i class="fa-sharp-duotone fa-solid fa-signal"></i>
           <div class="info-part4-b ms-2">
             <h6>Corporate Level:</h6>
-            <p>Level 10</p>
+            <p>{{ profile.level }}</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Data Binding: Class and Style Binding -->
     <div class="d-flex justify-content-between request-part1 gap-3">
       <div
         class="info request d-flex justify-content-evenly request-part1-a p-4"
+        [class.bg-primary]="requestsCount > 5"
+        [style.border-color]="'green'"
       >
         <div class="d-flex flex-column justify-content-center">
           <i class="fa-solid fa-list-check"></i>
           <p>Vacation<br />Requests</p>
         </div>
         <div class="d-flex flex-column justify-content-center">
-          <h3>10</h3>
-        </div>
-      </div>
-      <div
-        class="info request d-flex justify-content-evenly request-part1-a p-4"
-      >
-        <div class="d-flex flex-column justify-content-center">
-          <i class="fa-solid fa-list-check"></i>
-          <p>Vacation<br />Requests</p>
-        </div>
-        <div class="d-flex flex-column justify-content-center">
-          <h3>10</h3>
+          <h3>{{ requestsCount }}</h3>
         </div>
       </div>
     </div>
