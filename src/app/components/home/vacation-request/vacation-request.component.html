@@ -1,1 +1,31 @@
-<p>vacation-request works!</p>
+<!-- Vacation Requests -->
+<div class="container mt-4">
+    <div class="vacation p-4 pb-0">
+        <div class="d-flex justify-content-between flex-wrap gap-3">
+            <div class="d-flex justify-content-start align-items-center">
+                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <h4 class="ms-2">Vacation Requests</h4>
+            </div>
+
+            <div class="search-container p-2">
+                <form action="" method="post">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" name="search" id="search" placeholder="search..." class="ms-2" />
+                </form>
+            </div>
+        </div>
+        <hr />
+        <!-- Cards Section -->
+        <div class="card-deck d-flex flex-wrap gap-5" id="load-data">
+            <app-vacation-request-card></app-vacation-request-card>
+            <app-vacation-request-card></app-vacation-request-card>
+            <app-vacation-request-card></app-vacation-request-card>
+            <app-vacation-request-card></app-vacation-request-card>
+        </div>
+
+        <!-- View More -->
+        <div class="w-100 d-flex justify-content-end p-3">
+            <a href="./Pages/Request.html" class="view-more">View More ></a>
+        </div>
+    </div>
+</div>

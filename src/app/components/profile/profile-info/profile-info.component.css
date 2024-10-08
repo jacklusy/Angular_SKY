@@ -1,0 +1,38 @@
+.profile-container {
+    background-color: #f6f6f6;
+}
+
+.info-part2 .btn-req {
+    background-color: #247e3e !important;
+    color: #fff !important;
+}
+
+.info-part1-b .major {
+    color: #000 !important;
+}
+
+.info-part1-b p {
+    font-size: 13px;
+}
+
+.info-part1 img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.info {
+    border-radius: 20px !important;
+    box-shadow: 0px 7px 20px 0px rgb(0 0 0 / 24%);
+}
+
+.btn-req {
+    width: 159px;
+    font-weight: 500;
+    height: 37px;
+    font-size: 14px !important;
+}
+
+.info-part1 .info-part1-b h6,
+p {
+    margin: 0 !important;
+}

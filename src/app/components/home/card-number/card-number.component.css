@@ -1,0 +1,30 @@
+.info {
+    border-radius: 20px !important;
+    box-shadow: 0px 7px 20px 0px rgb(0 0 0 / 24%);
+}
+
+.request {
+    background-color: #247e3e !important;
+}
+
+.request-part1-a {
+    width: 100% !important;
+}
+
+i,
+p,
+h3 {
+    color: #fff !important;
+}
+
+i {
+    font-size: 43px;
+}
+
+h3 {
+    font-size: 72px;
+}
+
+p {
+    font-size: 12px;
+}

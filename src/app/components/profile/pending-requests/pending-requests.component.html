@@ -1,1 +1,22 @@
-<p>pending-requests works!</p>
+<!-- Pending Requests -->
+<div class="container mt-4">
+    <div class="pending p-4 pb-0">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-start align-items-center">
+                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <h4 class="ms-2">Pending Requests</h4>
+            </div>
+        </div>
+        <br />
+        <!-- Cards -->
+        <div class="card-deck d-flex justify-content-start gap-3">
+            <app-card-pending-request></app-card-pending-request>
+            <app-card-pending-request></app-card-pending-request>
+            <app-card-pending-request></app-card-pending-request>
+        </div>
+        <!-- View More -->
+        <div class="w-100 d-flex justify-content-end p-3">
+            <a href="./Request.html" class="view-more">View More ></a>
+        </div>
+    </div>
+</div>

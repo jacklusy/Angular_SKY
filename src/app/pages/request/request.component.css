@@ -1,0 +1,27 @@
+.Requests i.fa-list-check {
+    font-size: 30px;
+    color: #247f3e;
+}
+
+.Requests i.fa-magnifying-glass {
+    font-size: 20px;
+    color: #247f3e;
+}
+
+#load-data {
+    height: auto;
+}
+
+.select-all {
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .Requests {
+        flex-direction: column;
+    }
+
+    .Requests .search-container {
+        margin-top: 2rem;
+    }
+}

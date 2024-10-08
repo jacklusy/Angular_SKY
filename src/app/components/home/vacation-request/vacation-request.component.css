@@ -1,0 +1,39 @@
+/* Vacation Requests */
+.vacation {
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-shadow: 0px 7px 20px 0px #00000045;
+}
+
+.vacation i.fa-list-check {
+    font-size: 30px;
+    color: #247f3e;
+}
+
+.search-container {
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+
+.search-container form #search {
+    border: 0 !important;
+    width: 80%;
+    outline: none;
+}
+
+.search-container form #search:focus {
+    outline: none;
+}
+
+.vacation i.fa-magnifying-glass {
+    font-size: 20px;
+    color: #247f3e;
+}
+
+.view-more {
+    color: #247e3e;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+}
