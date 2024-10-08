@@ -4,11 +4,12 @@ import { ProfileCardComponent } from '../../components/home/profile-card/profile
 import { CardNumberComponent } from '../../components/home/card-number/card-number.component';
 import { CarouselComponent } from '../../components/home/carousel/carousel.component';
 import { VacationRequestComponent } from '../../components/home/vacation-request/vacation-request.component';
+import { NavbarComponent } from '../../components/body/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TitleComponent, ProfileCardComponent, CardNumberComponent, CarouselComponent, VacationRequestComponent],
+  imports: [NavbarComponent, TitleComponent, ProfileCardComponent, CardNumberComponent, CarouselComponent, VacationRequestComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
