@@ -1,20 +1,20 @@
 <div class="card">
-    <img src="./assets/images/Default.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="User Image"
+    <img [src]="photo?.url" [alt]="photo?.title" class="card-img-top rounded-circle mx-auto mt-3" alt="User Image"
         style="width: 100px" />
     <div class="card-body text-center">
-        <h5 class="card-title">Test</h5>
+        <h5 class="card-title">{{user.username}}</h5>
         <div class="p-3">
             <ul>
                 <li class="card-text">Submitted on:</li>
-                <li class="card-bold">Test</li>
+                <li class="card-bold">{{user.address.zipcode}}</li>
             </ul>
             <ul>
                 <li class="card-text">Duration:</li>
-                <li class="card-bold">Test</li>
+                <li class="card-bold">{{user.address.city}}</li>
             </ul>
             <ul>
                 <li class="card-text">Salary:</li>
-                <li class="card-bold">Test</li>
+                <li class="card-bold">{{user.address.geo.lat}}</li>
             </ul>
         </div>
         <div class="d-flex justify-content-around">
