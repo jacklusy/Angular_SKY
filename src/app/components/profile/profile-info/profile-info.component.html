@@ -1,14 +1,14 @@
 <!-- Container -->
-<div class="container">
+<div class="container" *ngIf="user">
     <div class="w-100 pb-5 pt-5">
         <div class="info profile-container">
             <div class="d-flex justify-content-between p-3 flex-wrap gap-4">
                 <div class="d-flex justify-content-between info-part1">
-                    <img src="../assets/images/Default.jpg" alt="" />
+                    <img *ngIf="photo" [src]="photo.url ? photo.url : profile.photoUrl" alt="{{ profile.name }}" />
                     <div class="info-part1-b ms-2">
-                        <h6>Ahmad Azmi</h6>
-                        <p class="major">Marketing Department</p>
-                        <p>Junior Accounting Officer</p>
+                        <h6>{{ user.name }}</h6>
+                        <p class="major">{{ user.username }}</p>
+                        <p>{{ user.email }}</p>
                     </div>
                 </div>
                 <div class="info-part2">
@@ -17,38 +17,38 @@
             </div>
             <div class="d-flex justify-content-between p-4 flex-wrap gap-5">
                 <div class="d-flex justify-content-between info-part3">
-                    <i class="fa-solid fa-user"></i>
+                    <fa-icon class="icon" [icon]="faUser"></fa-icon>
                     <div class="info-part3-b ms-2">
                         <h6>Reporting To:</h6>
-                        <p>Salwa Assem</p>
+                        <p>{{ profile.reportingTo }}</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between info-part4">
-                    <i class="fa-sharp-duotone fa-solid fa-signal"></i>
+                    <fa-icon class="icon" [icon]="faSignal"></fa-icon>
                     <div class="info-part4-b ms-2">
                         <h6>Corporate Level:</h6>
-                        <p>Level 10</p>
+                        <p>{{ profile.corporateLevel }}</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between info-part4">
-                    <i class="fa-solid fa-hourglass-half"></i>
+                    <fa-icon class="icon" [icon]="faHourglassHalf"></fa-icon>
                     <div class="info-part4-b ms-2">
                         <h6>Lifetime</h6>
-                        <p>2.5 Years</p>
+                        <p>{{ profile.lifetime }}</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between info-part4">
-                    <i class="fa-brands fa-pagelines"></i>
+                    <fa-icon class="icon" [icon]="faPagelines"></fa-icon>
                     <div class="info-part4-b ms-2">
                         <h6>Vacation Days Left:</h6>
-                        <p>10 Days</p>
+                        <p>{{ profile.vacationDaysLeft }} Days</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between info-part4">
-                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                    <fa-icon class="icon" [icon]="faPrescriptionBottleMedical"></fa-icon>
                     <div class="info-part4-b ms-2">
                         <h6>Sick Days Left:</h6>
-                        <p>14 Days</p>
+                        <p>{{ profile.sickDaysLeft }} Days</p>
                     </div>
                 </div>
             </div>

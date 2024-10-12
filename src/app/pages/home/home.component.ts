@@ -15,4 +15,10 @@ import { NavbarComponent } from '../../components/body/navbar/navbar.component';
 })
 export class HomeComponent {
   cardNumbers = [1, 2];
+
+  ReqNum: number = 10;
+  Requests: string = 'Vacation';
+
+  ReqNum2: number = 10;
+  Requests2: string = 'Leave';
 }

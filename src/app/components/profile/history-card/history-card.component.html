@@ -1,7 +1,8 @@
-<div class="card">
-    <div class="card-body text-center">
-        <h5 class="card-title">Annual Vacation</h5>
-        <p>2/3/2023 - 10/3/2023 <strong>8 days</strong></p>
-        <p>Approved by: Hazem Azmi</p>
+<div class="card h-100">
+    <div class="card-body text-center p-2">
+        <h5 class="card-title text-start mb-0">{{ post?.title }}</h5>
+        <p class="card-text text-start text-muted mb-0 overflow-hidden text-truncate" style="max-height: 3.6em;">{{
+            post?.body }}</p>
+        <p class="text-start mb-0">Approved by: {{ post?.title }}</p>
     </div>
 </div>

@@ -1,14 +1,19 @@
-<app-navbar></app-navbar>
 <div class="container">
 
     <app-title></app-title>
-    <div class="d-flex justify-content-between pb-5 pt-5 flex-wrap gap-3">
-        <app-profile-card></app-profile-card>
-        <div class="d-flex justify-content-between request-part1 gap-3">
-            <app-card-number></app-card-number>
-            <app-card-number></app-card-number>
+
+    <div class="row pb-5 pt-5">
+        <div class="col-12 col-md-6 mb-3">
+            <app-profile-card></app-profile-card>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+            <app-card-number [requests]="Requests" [reqNum]="ReqNum"></app-card-number>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+            <app-card-number [requests]="Requests2" [reqNum]="ReqNum2"></app-card-number>
         </div>
     </div>
+
     <app-carousel></app-carousel>
     <app-vacation-request></app-vacation-request>
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Post } from '../../../services/post.service';
 
 @Component({
   selector: 'app-history-card',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './history-card.component.css'
 })
 export class HistoryCardComponent {
-
+  @Input() post: Post | null = null;
 }

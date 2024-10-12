@@ -1,4 +1,3 @@
-<!-- Header with title, search, and select all -->
 <div class="d-flex justify-content-between Requests">
     <div class="d-flex justify-content-start align-items-center">
         <i class="fa-solid fa-list-check" aria-hidden="true"></i>
@@ -6,18 +5,17 @@
     </div>
 
     <div class="search-container p-2">
-        <form action="" method="post">
+        <form (submit)="false">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" name="search" id="search" placeholder="Search..." class="ms-2" />
+            <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Search by name" />
         </form>
     </div>
 </div>
 <hr />
 
-<!-- Select All and Filter -->
 <div class="d-flex justify-content-between mb-4">
     <div>
-        <input type="checkbox" id="select-all" />
+        <!-- <input type="checkbox" id="select-all" (change)="onCheckboxChange($event.target.checked)" /> -->
         <label for="select-all" class="select-all ms-2">Select All</label>
     </div>
     <div>

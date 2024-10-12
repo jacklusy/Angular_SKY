@@ -1,6 +1,6 @@
 <div class="card">
-    <img [src]="photo?.url" [alt]="photo?.title" class="card-img-top rounded-circle mx-auto mt-3" alt="User Image"
-        style="width: 100px" />
+    <img [src]="photo?.url ? photo?.url : 'assets/images/NoImage.jpg'" [alt]="photo?.title || 'No Image Available'"
+        class="card-img-top rounded-circle mx-auto mt-3" alt="User Image" style="width: 100px" />
     <div class="card-body text-center">
         <h5 class="card-title">{{user.username}}</h5>
         <div class="p-3">

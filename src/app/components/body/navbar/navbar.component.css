@@ -12,9 +12,13 @@
 }
 
 .active {
-    font-weight: bold !important;
+    font-weight: 600 !important;
 }
 
 .footer {
     height: 200px !important;
+}
+
+.active-link {
+    font-weight: bold;
 }

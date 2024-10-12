@@ -1,18 +1,13 @@
-<app-navbar></app-navbar>
 <!-- Vacation Requests -->
 <div class="container mt-4">
     <!-- Vacation Requests Header -->
     <div class="p-4 pb-0">
-        <app-title></app-title>
+        <app-title [(searchQuery)]="searchQuery" (selectAllChange)="handleSelectAllChange($event)">
+        </app-title>
 
-        <!-- Cards Section -->
-        <div class="card-deck d-flex flex-wrap gap-5" id="load-data">
-            <app-card-vacation-requests></app-card-vacation-requests>
-            <app-card-vacation-requests></app-card-vacation-requests>
-            <app-card-vacation-requests></app-card-vacation-requests>
-            <app-card-vacation-requests></app-card-vacation-requests>
-            <app-card-vacation-requests></app-card-vacation-requests>
-            <app-card-vacation-requests></app-card-vacation-requests>
+        <div *ngIf="users.length" class="card-deck d-flex flex-wrap gap-5" id="load-data">
+            <app-card-vacation-requests *ngFor="let user of users" [users]="user"
+                [photo]="photos[user.id]"></app-card-vacation-requests>
         </div>
 
         <!-- Pagination -->

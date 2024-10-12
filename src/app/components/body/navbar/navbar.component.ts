@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { routes } from '../../../app.routes';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  public navLinks = routes.filter(route => route.path !== '');
 }
