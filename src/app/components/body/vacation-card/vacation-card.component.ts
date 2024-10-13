@@ -15,11 +15,13 @@ export class VacationCardComponent {
   @Input() user!: User;
   @Input() photo!: Photo;
   @Output() checkboxChange = new EventEmitter<boolean>();
+  @Input() isHaveCheckbox!: boolean;
 
   isChecked: boolean = false;
-  isHaveCheckbox: boolean = true;
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
+    this.isHaveCheckbox = this.isChecked;
+    console.log('Checked status:', this.isChecked);
     this.checkboxChange.emit(this.isChecked);
   }
 }

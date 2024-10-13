@@ -6,7 +6,8 @@
 
 
         <div *ngIf="users.length" class="card-deck d-flex flex-wrap gap-5" id="load-data">
-            <app-vacation-card *ngFor="let user of filteredUsers" [user]="user" [photo]="photos[user.id - 1]" />
+            <app-vacation-card *ngFor="let user of filteredUsers" [user]="user" [photo]="photos[user.id - 1]"
+                [isHaveCheckbox]="isHaveCheckbox" />
         </div>
 
         <div id="pagination" class="d-flex justify-content-center mt-4">

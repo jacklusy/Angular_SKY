@@ -1,22 +1,17 @@
 .card-title {
-    margin: 0 !important;
-    text-align: start !important;
     font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.text-start {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .card-body p {
     color: #c3c3c3;
-    text-align: start !important;
     font-size: 15px;
-}
-
-.card-deck {
-    width: 90%;
-    margin: auto;
-}
-
-h6,
-p {
-    margin: 0 !important;
 }

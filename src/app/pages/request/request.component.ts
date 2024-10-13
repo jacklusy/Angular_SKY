@@ -19,6 +19,7 @@ export class RequestComponent {
   filteredUsers: User[] = [];
   searchQuery: string = '';
   photos: Photo[] = [];
+  isHaveCheckbox: boolean = false;
 
   constructor(private userService: UserService, private photoService: PhotoService) { }
 
@@ -46,6 +47,7 @@ export class RequestComponent {
 
 
   onCheckboxChange(checked: boolean): void {
+    this.isHaveCheckbox = checked;
     this.filteredUsers.forEach(user => {
       user.isChecked = checked;
     });

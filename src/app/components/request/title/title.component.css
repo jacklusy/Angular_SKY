@@ -1,20 +1,4 @@
-.search-container {
-    background-color: #fff;
-    border-radius: 25px;
-    border: 1px solid #000;
-}
-
-.search-container form #search {
-    border: 0 !important;
-    width: 80%;
-    outline: none;
-}
-
-.search-container form #search:focus {
-    outline: none;
-}
-
-.vacation i.fa-magnifying-glass {
-    font-size: 20px;
-    color: #247f3e;
+.icon {
+    color: green;
+    font-size: 30px;
 }

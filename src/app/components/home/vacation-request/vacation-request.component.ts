@@ -7,12 +7,14 @@ import { VacationCardComponent } from "../../body/vacation-card/vacation-card.co
 import { SearchVacationCardComponent } from "../../body/search-vacation-card/search-vacation-card.component";
 import { RouterModule } from '@angular/router';
 import { ViewMoreComponent } from "../../body/view-more/view-more.component";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faListCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-vacation-request',
   standalone: true,
-  imports: [FormsModule, CommonModule, VacationCardComponent, SearchVacationCardComponent, RouterModule, ViewMoreComponent],
+  imports: [FormsModule, CommonModule, VacationCardComponent, SearchVacationCardComponent, RouterModule, ViewMoreComponent, FontAwesomeModule],
   templateUrl: './vacation-request.component.html',
   styleUrls: ['./vacation-request.component.css']
 })
@@ -21,6 +23,7 @@ export class VacationRequestComponent {
   filteredUsers: User[] = [];
   searchQuery: string = '';
   photos: Photo[] = [];
+  isHaveCheckbox: boolean = false;
 
   constructor(private userService: UserService, private photoService: PhotoService) { }
 
@@ -44,4 +47,7 @@ export class VacationRequestComponent {
     );
     console.log('Filtered users:', this.filteredUsers);
   }
+
+  listCheck = faListCheck;
+
 }

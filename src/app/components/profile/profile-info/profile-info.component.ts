@@ -4,6 +4,7 @@ import { PhotoService } from '../../../services/photo.service';
 import { CommonModule } from '@angular/common';
 import { faUser, faSignal, faHourglassHalf, faPrescriptionBottleMedical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterLink } from '@angular/router';
 
 interface Address {
   street: string;
@@ -43,7 +44,7 @@ interface Photo {
 @Component({
   selector: 'app-profile-info',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, RouterLink],
   templateUrl: './profile-info.component.html',
   styleUrl: './profile-info.component.css'
 })

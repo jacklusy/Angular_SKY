@@ -3,7 +3,7 @@
     <div class="vacation p-4 pb-0">
         <div class="d-flex justify-content-between flex-wrap gap-3">
             <div class="d-flex justify-content-start align-items-center">
-                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <fa-icon [icon]="listCheck" class="icon p-2"></fa-icon>
                 <h4 class="ms-2">Vacation Requests</h4>
             </div>
 
@@ -14,9 +14,9 @@
         </div>
         <hr />
         <!-- Cards Section -->
-        <div class="card-deck d-flex flex-wrap gap-5" id="load-data">
+        <div class="card-deck d-flex flex-wrap gap-5">
             <app-vacation-card *ngFor="let user of filteredUsers | slice:0:4" [user]="user"
-                [photo]="photos[user.id - 1]" />
+                [photo]="photos[user.id - 1]" [isHaveCheckbox]="isHaveCheckbox" />
         </div>
 
         <app-view-more />

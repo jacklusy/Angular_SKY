@@ -3,14 +3,14 @@
     <div class="pending p-4 pb-0">
         <div class="d-flex justify-content-between">
             <div class="d-flex justify-content-start align-items-center">
-                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <fa-icon [icon]="listCheck" class="icon p-2"></fa-icon>
                 <h4 class="ms-2">Pending Requests</h4>
             </div>
         </div>
         <br />
         <!-- Cards -->
-        <div class="card-deck d-flex justify-content-start gap-3">
-            <app-card-pending-request *ngFor="let user of users | slice: 0: 6" [user]="user"
+        <div class="card-deck d-flex flex-wrap justify-content-between gap-2">
+            <app-card-pending-request *ngFor="let user of users | slice: 0: 5" [user]="user"
                 [photo]="photos[user.id - 1]">
             </app-card-pending-request>
         </div>

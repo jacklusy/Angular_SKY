@@ -1,11 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SearchVacationCardComponent } from "../../body/search-vacation-card/search-vacation-card.component";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faListCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-title',
   standalone: true,
-  imports: [FormsModule, SearchVacationCardComponent],
+  imports: [FormsModule, SearchVacationCardComponent, FontAwesomeModule],
   templateUrl: './title.component.html',
   styleUrl: './title.component.css'
 })
@@ -23,4 +25,7 @@ export class TitleComponent {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.selectAllChange.emit(isChecked);
   }
+
+  listCheck = faListCheck;
+
 }

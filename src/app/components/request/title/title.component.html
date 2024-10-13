@@ -1,16 +1,10 @@
 <div class="d-flex justify-content-between Requests">
     <div class="d-flex justify-content-start align-items-center">
-        <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+        <fa-icon [icon]="listCheck" class="icon p-2"></fa-icon>
         <h4 class="ms-2">Vacation Requests</h4>
     </div>
 
-    <div class="search-container p-2">
-        <!-- <form (submit)="false">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search by name" [(ngModel)]="searchQuery"
-                (ngModelChange)="onSearchChange($event)">
-        </form> -->
-
+    <div class="border border-black rounded-5 p-2 h-100">
         <app-search-vacation-card [(searchQuery)]="searchQuery"
             (searchQueryChange)="onSearchChange($event)"></app-search-vacation-card>
     </div>

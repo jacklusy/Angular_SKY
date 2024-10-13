@@ -4,11 +4,13 @@ import { Photo, PhotoService } from '../../../services/photo.service';
 import { CommonModule } from '@angular/common';
 import { ViewMoreComponent } from "../../body/view-more/view-more.component";
 import { CardPendingRequestComponent } from '../card-pending-request/card-pending-request.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faListCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pending-requests',
   standalone: true,
-  imports: [CardPendingRequestComponent, CommonModule, ViewMoreComponent],
+  imports: [CardPendingRequestComponent, CommonModule, ViewMoreComponent, FontAwesomeModule],
   templateUrl: './pending-requests.component.html',
   styleUrl: './pending-requests.component.css'
 })
@@ -27,4 +29,7 @@ export class PendingRequestsComponent {
       this.photos = data;
     });
   }
+
+  listCheck = faListCheck;
+
 }
