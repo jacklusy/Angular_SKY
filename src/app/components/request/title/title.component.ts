@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SearchVacationCardComponent } from "../../body/search-vacation-card/search-vacation-card.component";
 
 @Component({
   selector: 'app-title',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, SearchVacationCardComponent],
   templateUrl: './title.component.html',
   styleUrl: './title.component.css'
 })
@@ -13,11 +14,13 @@ export class TitleComponent {
   @Output() searchQueryChange = new EventEmitter<string>();
   @Output() selectAllChange = new EventEmitter<boolean>();
 
-  onSearchChange() {
+  onSearchChange(searchQuery: string): void {
+    this.searchQuery = searchQuery;
     this.searchQueryChange.emit(this.searchQuery);
   }
 
-  onCheckboxChange(checked: boolean) {
-    this.selectAllChange.emit(checked);
+  onCheckboxChange(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.selectAllChange.emit(isChecked);
   }
 }

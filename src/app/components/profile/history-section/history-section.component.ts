@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { HistoryCardComponent } from '../history-card/history-card.component';
 import { Post, PostService } from '../../../services/post.service';
 import { CommonModule } from '@angular/common';
+import { ViewMoreComponent } from "../../body/view-more/view-more.component";
 
 @Component({
   selector: 'app-history-section',
   standalone: true,
-  imports: [HistoryCardComponent, CommonModule],
+  imports: [HistoryCardComponent, CommonModule, ViewMoreComponent],
   templateUrl: './history-section.component.html',
   styleUrl: './history-section.component.css'
 })

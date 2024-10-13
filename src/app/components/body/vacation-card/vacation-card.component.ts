@@ -1,22 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { User } from '../../../services/user.service';
 import { Photo } from '../../../services/photo.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-card-vacation-requests',
+  selector: 'app-vacation-card',
   standalone: true,
-  imports: [FormsModule],
-  templateUrl: './card-vacation-requests.component.html',
-  styleUrl: './card-vacation-requests.component.css'
+  imports: [CommonModule, FormsModule],
+  templateUrl: './vacation-card.component.html',
+  styleUrl: './vacation-card.component.css'
 })
-export class CardVacationRequestsComponent {
-  @Input() users: any;
-  @Input() photo: any;
+export class VacationCardComponent {
+  @Input() user!: User;
+  @Input() photo!: Photo;
   @Output() checkboxChange = new EventEmitter<boolean>();
 
   isChecked: boolean = false;
-
+  isHaveCheckbox: boolean = true;
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
     this.checkboxChange.emit(this.isChecked);

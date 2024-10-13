@@ -10,13 +10,10 @@
         <br />
         <!-- Cards -->
         <div class="card-deck d-flex justify-content-start gap-3">
-            <app-card-pending-request></app-card-pending-request>
-            <app-card-pending-request></app-card-pending-request>
-            <app-card-pending-request></app-card-pending-request>
+            <app-card-pending-request *ngFor="let user of users | slice: 0: 6" [user]="user"
+                [photo]="photos[user.id - 1]">
+            </app-card-pending-request>
         </div>
-        <!-- View More -->
-        <div class="w-100 d-flex justify-content-end p-3">
-            <a href="./Request.html" class="view-more">View More ></a>
-        </div>
+        <app-view-more />
     </div>
 </div>

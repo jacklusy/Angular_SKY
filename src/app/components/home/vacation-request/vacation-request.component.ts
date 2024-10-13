@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { VacationRequestCardComponent } from '../vacation-request-card/vacation-request-card.component';
 import { User, UserService } from '../../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { Photo, PhotoService } from '../../../services/photo.service';
 import { FormsModule } from '@angular/forms';
+import { VacationCardComponent } from "../../body/vacation-card/vacation-card.component";
+import { SearchVacationCardComponent } from "../../body/search-vacation-card/search-vacation-card.component";
+import { RouterModule } from '@angular/router';
+import { ViewMoreComponent } from "../../body/view-more/view-more.component";
 
 
 @Component({
   selector: 'app-vacation-request',
   standalone: true,
-  imports: [FormsModule, CommonModule, VacationRequestCardComponent],
+  imports: [FormsModule, CommonModule, VacationCardComponent, SearchVacationCardComponent, RouterModule, ViewMoreComponent],
   templateUrl: './vacation-request.component.html',
   styleUrls: ['./vacation-request.component.css']
 })
@@ -32,12 +35,13 @@ export class VacationRequestComponent {
     });
   }
 
-  onSearchChange(): void {
-    // Filter users based on the search query
+  onSearchChange(searchQuery: string): void {
+    console.log('Search query:', searchQuery);
     this.filteredUsers = this.users.filter(user =>
-      user.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      user.username.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      user.email.toLowerCase().includes(this.searchQuery.toLowerCase())
-    ).slice(0, 4);
+      user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.email.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    console.log('Filtered users:', this.filteredUsers);
   }
 }

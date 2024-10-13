@@ -1,0 +1,16 @@
+input[type="search"] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+input[type="search"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="search"] {
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}

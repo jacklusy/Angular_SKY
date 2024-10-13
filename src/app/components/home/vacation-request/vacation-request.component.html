@@ -8,24 +8,17 @@
             </div>
 
             <div class="search-container p-2">
-                <form action="" method="post">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" name="search" id="search" placeholder="search..." class="ms-2"
-                        [(ngModel)]="searchQuery" (input)="onSearchChange()" />
-                </form>
+                <app-search-vacation-card [(searchQuery)]="searchQuery"
+                    (searchQueryChange)="onSearchChange($event)"></app-search-vacation-card>
             </div>
         </div>
         <hr />
         <!-- Cards Section -->
         <div class="card-deck d-flex flex-wrap gap-5" id="load-data">
-            <app-vacation-request-card *ngFor="let user of filteredUsers | slice:0:4" [user]="user"
-                [photo]="photos[user.id - 1]">
-            </app-vacation-request-card>
+            <app-vacation-card *ngFor="let user of filteredUsers | slice:0:4" [user]="user"
+                [photo]="photos[user.id - 1]" />
         </div>
 
-        <!-- View More -->
-        <div class="w-100 d-flex justify-content-end p-3">
-            <a href="./Pages/Request.html" class="view-more">View More ></a>
-        </div>
+        <app-view-more />
     </div>
 </div>

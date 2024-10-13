@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from '../../../services/user.service';
+import { Photo } from '../../../services/photo.service';
 
 @Component({
   selector: 'app-card-pending-request',
@@ -8,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './card-pending-request.component.css'
 })
 export class CardPendingRequestComponent {
-
+  @Input() user!: User;
+  @Input() photo!: Photo;
 }

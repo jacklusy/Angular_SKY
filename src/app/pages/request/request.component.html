@@ -1,16 +1,20 @@
-<!-- Vacation Requests -->
 <div class="container mt-4">
-    <!-- Vacation Requests Header -->
     <div class="p-4 pb-0">
-        <app-title [(searchQuery)]="searchQuery" (selectAllChange)="handleSelectAllChange($event)">
+        <app-title [(searchQuery)]="searchQuery" (searchQueryChange)="onSearchChange($event)"
+            (selectAllChange)="onCheckboxChange($event)">
         </app-title>
 
+
         <div *ngIf="users.length" class="card-deck d-flex flex-wrap gap-5" id="load-data">
-            <app-card-vacation-requests *ngFor="let user of users" [users]="user"
-                [photo]="photos[user.id]"></app-card-vacation-requests>
+            <app-vacation-card *ngFor="let user of filteredUsers" [user]="user" [photo]="photos[user.id - 1]" />
         </div>
 
-        <!-- Pagination -->
-        <div id="pagination" class="d-flex justify-content-center mt-4"></div>
+        <div id="pagination" class="d-flex justify-content-center mt-4">
+            <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button (click)="currentPage = currentPage + 1"
+                [disabled]="currentPage * itemsPerPage >= filteredUsers.length">Next</button>
+        </div>
+
     </div>
 </div>

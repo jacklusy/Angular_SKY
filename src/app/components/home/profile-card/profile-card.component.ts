@@ -1,49 +1,15 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../../services/user.service';
+import { User, UserService } from '../../../services/user.service';
 import { CommonModule } from '@angular/common';
-import { PhotoService } from '../../../services/photo.service';
+import { Photo, PhotoService } from '../../../services/photo.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSignal, faUser } from '@fortawesome/free-solid-svg-icons';
-
-interface Address {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: {
-    lat: string;
-    lng: string;
-  };
-}
-
-interface Company {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-}
-
-interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-}
-interface Photo {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, RouterLink],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.css'
 })

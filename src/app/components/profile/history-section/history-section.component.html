@@ -12,9 +12,6 @@
             <app-history-card *ngFor="let post of posts | slice:0:8;" [post]="post"
                 class="col-6 col-md-4 col-lg-2"></app-history-card>
         </div>
-        <!-- View More -->
-        <div class="d-flex justify-content-end p-3">
-            <a href="./Request.html" class="text-success fw-bold fs-5 text-decoration-none">View More ></a>
-        </div>
+        <app-view-more />
     </div>
 </div>

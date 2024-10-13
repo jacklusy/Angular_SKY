@@ -5,17 +5,21 @@
     </div>
 
     <div class="search-container p-2">
-        <form (submit)="false">
+        <!-- <form (submit)="false">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Search by name" />
-        </form>
+            <input type="search" placeholder="Search by name" [(ngModel)]="searchQuery"
+                (ngModelChange)="onSearchChange($event)">
+        </form> -->
+
+        <app-search-vacation-card [(searchQuery)]="searchQuery"
+            (searchQueryChange)="onSearchChange($event)"></app-search-vacation-card>
     </div>
 </div>
 <hr />
 
 <div class="d-flex justify-content-between mb-4">
     <div>
-        <!-- <input type="checkbox" id="select-all" (change)="onCheckboxChange($event.target.checked)" /> -->
+        <input type="checkbox" id="select-all" (change)="onCheckboxChange($event)" />
         <label for="select-all" class="select-all ms-2">Select All</label>
     </div>
     <div>

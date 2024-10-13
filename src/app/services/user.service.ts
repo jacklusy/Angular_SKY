@@ -22,7 +22,7 @@ interface Company {
 }
 
 export interface User {
-  isChecked: boolean;
+  isChecked?: boolean;
   id: number;
   name: string;
   username: string;
